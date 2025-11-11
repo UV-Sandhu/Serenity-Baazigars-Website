@@ -2,23 +2,374 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Team Members – Serenity Baazigars</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenity Baazigars - Home</title>
-    <link rel="stylesheet" href="home.css">
+    <style>
+        :root {
+            --main: #222;
+            --accent: #e0e0e0;
+            --bg: #f8f8f8;
+            --white: #fff;
+            --shadow: 0 3px 16px 2px rgba(0,0,0,0.08);
+            --text-accent: #757575;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--main);
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        /* Background image container */
+        .bg-image-holder {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: bgfadein 2.3s cubic-bezier(.6,.14,.15,1.02) 0s 1 forwards;
+        }
+        .bg-image-holder img {
+            width: 100vw;
+            height: 100vh;
+            max-width: unset;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(0.3) blur(0.5px) brightness(0.93) saturate(1.02);
+            opacity: 0.8;
+            transform: scale(1.08);
+            animation: bgzoom 17s ease-in-out alternate infinite;
+        }
+        @keyframes bgfadein {
+            0% { opacity: 0; }
+            100% { opacity: 0.7; }
+        }
+        @keyframes bgzoom {
+            0% { transform: scale(1.06);}
+            100% { transform: scale(1.12);}
+        }
+        /* Create overlay to enhance text contrast */
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 1;
+            background:linear-gradient(120deg,rgba(32,32,32,0.16) 20%,rgba(250,250,250,0.15) 80%);
+            pointer-events: none;
+        }
+        /* Main content is above the background */
+        .page-content {
+            position: relative;
+            z-index: 2;
+        }
+        header {
+            background: linear-gradient(90deg, var(--main) 80%, var(--accent) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 28px 0 18px 0;
+            letter-spacing: 2px;
+            font-size: 2.1rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        h2 {
+            color: var(--main);
+            text-align: center;
+            margin-top: 32px;
+            font-size: 1.7rem;
+            letter-spacing: 1.3px;
+            text-shadow: 0 2px 8px #ededed;
+        }
+        .search-box {
+            max-width: 380px;
+            margin: 20px auto 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .search-box input[type="text"] {
+            padding: 8px 14px;
+            font-size: 1.1em;
+            border: 1.5px solid #ccc;
+            border-radius: 18px 0 0 18px;
+            outline: none;
+            background: var(--white);
+            color: var(--main);
+            flex: 1;
+            transition: border-color .18s;
+        }
+        .search-box input[type="text"]:focus {
+            border-color: #999;
+        }
+        .search-box button {
+            border: 1.5px solid #ccc;
+            background: var(--accent);
+            color: var(--main);
+            font-weight: 700;
+            font-size: 1em;
+            padding: 9px 15px;
+            border-radius: 0 18px 18px 0;
+            cursor: pointer;
+            transition: background .18s, border-color .18s;
+        }
+        .search-box button:hover {
+            background: #d3d3d3;
+            border-color: #999;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px 20px;
+            padding: 40px 4vw 32px 4vw;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .player-card {
+            background:rgba(255,255,255,0.97);
+            border-radius: 14px;
+            border: 1.5px solid #e0e0e0;
+            box-shadow: var(--shadow);
+            width: 230px;
+            text-align: center;
+            position: relative;
+            padding: 28px 18px 20px 18px;
+            transition: 
+                transform 0.19s cubic-bezier(.3,1.4,.45,1.13), 
+                box-shadow 0.21s, 
+                border-color 0.18s,
+                z-index 0.2s;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .player-card:hover {
+            transform: scale(1.13) translateY(-22px);
+            box-shadow: 0 26px 70px 12px rgba(20,20,20,0.20), 0 2px 16px #cfcfcf;
+            border-color: #bcbcbc;
+            z-index: 30;
+        }
+        .player-card img {
+            display: block;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 12px auto;
+            box-shadow: 0 2px 8px 0 rgba(80,80,80,.10);
+            background: #eee;
+            border: 1.5px solid #cfcfcf;
+            transition: border-color 0.17s;
+        }
+        .player-card:hover img {
+            border-color: #bcbcbc;
+        }
+        .player-card strong {
+            font-size: 1.1em;
+            color: var(--main);
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 5px;
+            text-shadow: 0 1px 5px #f4f4f4;
+        }
+        .player-card span {
+            /* color: white; */
+            font-size: 1em;
+            display: block;
+            margin-bottom: 7px;
+        }
+        .player-tag {
+            display: inline-block;
+            font-size: 0.88em;
+            color: var(--white);
+            background: var(--main);
+            border-radius: 12px;
+            padding: 2px 10px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1px;
+        }
+        .accent-bar {
+            width: 32px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 8px;
+            margin: 0 auto 13px auto;
+            box-shadow: 0 1.5px 8px #ededed;
+        }
+        .ribbon {
+            position: absolute;
+            top: 1px;
+            right: -0px;
+            background: #232323;
+            color: var(--white);
+            padding: 2px 30px 2px 12px;
+            /* transform: rotate(25deg); */
+            font-weight: 500;
+            font-size: 0.9em;
+            letter-spacing: 1.2px;
+            box-shadow: 0 1px 4px #e0e0e0;
+            border-radius: 6px;
+        }
+        .player-card {
+            opacity:0;
+            transform: translateY(40px);
+            animation: fadein 1s forwards;
+        }
+        .player-card:nth-child(1) { animation-delay: 0.1s;}
+        .player-card:nth-child(2) { animation-delay: 0.25s;}
+        .player-card:nth-child(3) { animation-delay: 0.4s;}
+        .player-card:nth-child(4) { animation-delay: 0.55s;}
+        .player-card:nth-child(n+5) { animation-delay: 0.7s;}
+        @keyframes fadein {
+            0% { opacity:0; transform: translateY(40px);}
+            100% { opacity:1; transform: none;}
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 77;
+            padding-top: 90px;
+            left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background: rgba(34,34,34,0.63);
+        }
+        .modal-content {
+            background: var(--white);
+            margin: auto; padding: 28px 18px;
+            border-radius: 15px;
+            max-width: 340px;
+            box-shadow: 0 5px 28px #444;
+            position: relative;
+            text-align: center;
+            border: 1.5px solid #d3d3d3;
+        }
+        .close {
+            color: var(--main);
+            position: absolute;
+            right: 22px; top: 10px;
+            font-size: 2.1em;
+            font-weight: 800;
+            cursor: pointer;
+            transition: color .19s;
+        }
+        .close:hover { color: var(--text-accent);}
+        .modal-content img {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 6px #e0e0e0;
+            border: 1.5px solid #cfcfcf;
+        }
+        @media (max-width: 800px) {
+            .team-container {gap: 20px 7px; padding: 2vw 0 20px 0;}
+            .player-card {width: 94vw; max-width: 320px;}
+            header { font-size: 1.3rem; padding: 15px 0 8px 0;}
+        }
+        @media (max-width: 500px) {
+            header { font-size: 1rem;}
+            h2 { font-size: 1rem;}
+            .modal-content { max-width: 98vw;}
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <div class="logo">
-                
-            </div>
-            <div class="links">
+    <!-- BACKGROUND IMAGE HOLDER -->
+    <div class="bg-image-holder">
+        <img src="back.jpg" alt="Background">
+    </div>
+    <div class="bg-overlay"></div>
 
+    <div class="page-content">
+        <header>
+            Serenity Baazigars
+        </header>
+        <h2>Meet Our Stars</h2>
+        <div class="search-box">
+            <input type="text" id="playerSearch" placeholder="Search team member...">
+            <button onclick="searchPlayer()">Search</button>
+        </div>
+        <div class="team-container" id="teamContainer">
+            <div class="player-card" data-name="Andrew Judah" data-role="Captain All-rounder Batsman" data-img="rohit.jpg" data-desc="One of the finest all-rounders, Andrew leads Baazigars with poise and experience.">
+                <div class="ribbon">Captain</div>
+                <img src="rohit.jpg" alt="Andrew Judah">
+                <strong>Andrew Judah</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">All-rounder</span>
+                <span>Batsman</span>
             </div>
-            <div class="container">
+            <div class="player-card" data-name="Dhrub Agarwal" data-role="Vice Captain Batsman" data-img="virat.jpg" data-desc="Vice Captain Dhrub is a run machine and master of chases.">
+                <img src="virat.jpg" alt="Dhrub Agarwal">
+                <strong>Dhrub Agarwal</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">Vice Captain</span>
+                <span>Batsman</span>
+            </div>
+            <div class="player-card" data-name="Manav G" data-role="Fast Bowler" data-img="bumrah.jpg" data-desc="Manav is known for deadly yorkers and pace bowling.">
+                <img src="bumrah.jpg" alt="Manav G">
+                <strong>Manav G</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">Fast Bowler</span>
+                <span>Bowler</span>
+            </div>
+            <div class="player-card" data-name="Rishi Deepak" data-role="All-rounder" data-img="jadeja.jpg" data-desc="Fielding wizard with match-winning all-round skills.">
+                <img src="jadeja.jpg" alt="Rishi Deepak">
+                <strong>Rishi Deepak</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">All-rounder</span>
+                <span>All-rounder</span>
+            </div>
+            <!-- Add more player cards here -->
+        </div>
 
+        <!-- Modal for Player Details -->
+        <div id="playerModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img src="" id="modalImg" alt="Player Photo"><br><br>
+                <h3 id="modalName"></h3>
+                <p id="modalRole"></p>
+                <p id="modalDesc"></p>
             </div>
         </div>
-    </nav>
+    </div>
+    <script>
+        // Modal popup
+        document.querySelectorAll('.player-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.getElementById('modalName').textContent = card.getAttribute('data-name');
+                document.getElementById('modalRole').textContent = card.getAttribute('data-role');
+                document.getElementById('modalDesc').textContent = card.getAttribute('data-desc');
+                document.getElementById('modalImg').src = card.getAttribute('data-img');
+                document.getElementById('modalImg').alt = card.getAttribute('data-name');
+                document.getElementById('playerModal').style.display = "block";
+            });
+        });
+        function closeModal() {
+            document.getElementById('playerModal').style.display = "none";
+        }
+        window.onclick = function(event) {
+            if(event.target == document.getElementById('playerModal')) closeModal();
+        }
+        function searchPlayer() {
+            const input = document.getElementById('playerSearch').value.toLowerCase();
+            document.querySelectorAll('.player-card').forEach(card => {
+                let name = card.getAttribute('data-name').toLowerCase();
+                let role = card.getAttribute('data-role').toLowerCase();
+                if (name.includes(input) || role.includes(input) || input==="") {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        document.getElementById('playerSearch').addEventListener('keyup', searchPlayer);
+        document.addEventListener('keydown', function(e){
+            if (e.key === "Escape") closeModal();
+        });
+    </script>
 </body>
 </html>
