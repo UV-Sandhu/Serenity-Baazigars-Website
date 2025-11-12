@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Team Members – Serenity Baazigars</title>
@@ -10,9 +11,10 @@
             --accent: #e0e0e0;
             --bg: #f8f8f8;
             --white: #fff;
-            --shadow: 0 3px 16px 2px rgba(0,0,0,0.08);
+            --shadow: 0 3px 16px 2px rgba(0, 0, 0, 0.08);
             --text-accent: #757575;
         }
+
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background: var(--bg);
@@ -21,17 +23,21 @@
             padding: 0;
             position: relative;
         }
+
         /* Background image container */
         .bg-image-holder {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: 0;
             overflow: hidden;
             pointer-events: none;
             opacity: 0.7;
-            animation: bgfadein 2.3s cubic-bezier(.6,.14,.15,1.02) 0s 1 forwards;
+            animation: bgfadein 2.3s cubic-bezier(.6, .14, .15, 1.02) 0s 1 forwards;
         }
+
         .bg-image-holder img {
             width: 100vw;
             height: 100vh;
@@ -43,27 +49,45 @@
             transform: scale(1.08);
             animation: bgzoom 17s ease-in-out alternate infinite;
         }
+
         @keyframes bgfadein {
-            0% { opacity: 0; }
-            100% { opacity: 0.7; }
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
         }
+
         @keyframes bgzoom {
-            0% { transform: scale(1.06);}
-            100% { transform: scale(1.12);}
+            0% {
+                transform: scale(1.06);
+            }
+
+            100% {
+                transform: scale(1.12);
+            }
         }
+
         /* Create overlay to enhance text contrast */
         .bg-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: 1;
-            background:linear-gradient(120deg,rgba(32,32,32,0.16) 20%,rgba(250,250,250,0.15) 80%);
+            background: linear-gradient(120deg, rgba(32, 32, 32, 0.16) 20%, rgba(250, 250, 250, 0.15) 80%);
             pointer-events: none;
         }
+
         /* Main content is above the background */
         .page-content {
             position: relative;
             z-index: 2;
         }
+
         header {
             background: linear-gradient(90deg, var(--main) 80%, var(--accent) 100%);
             color: var(--white);
@@ -79,6 +103,7 @@
             top: 0;
             z-index: 10;
         }
+
         h2 {
             color: var(--main);
             text-align: center;
@@ -87,12 +112,14 @@
             letter-spacing: 1.3px;
             text-shadow: 0 2px 8px #ededed;
         }
+
         .search-box {
             max-width: 380px;
             margin: 20px auto 0 auto;
             display: flex;
             justify-content: center;
         }
+
         .search-box input[type="text"] {
             padding: 8px 14px;
             font-size: 1.1em;
@@ -104,9 +131,11 @@
             flex: 1;
             transition: border-color .18s;
         }
+
         .search-box input[type="text"]:focus {
             border-color: #999;
         }
+
         .search-box button {
             border: 1.5px solid #ccc;
             background: var(--accent);
@@ -118,10 +147,12 @@
             cursor: pointer;
             transition: background .18s, border-color .18s;
         }
+
         .search-box button:hover {
             background: #d3d3d3;
             border-color: #999;
         }
+
         .team-container {
             display: flex;
             flex-wrap: wrap;
@@ -131,8 +162,9 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .player-card {
-            background:rgba(255,255,255,0.97);
+            background: rgba(255, 255, 255, 0.97);
             border-radius: 14px;
             border: 1.5px solid #e0e0e0;
             box-shadow: var(--shadow);
@@ -140,20 +172,22 @@
             text-align: center;
             position: relative;
             padding: 28px 18px 20px 18px;
-            transition: 
-                transform 0.19s cubic-bezier(.3,1.4,.45,1.13), 
-                box-shadow 0.21s, 
+            transition:
+                transform 0.19s cubic-bezier(.3, 1.4, .45, 1.13),
+                box-shadow 0.21s,
                 border-color 0.18s,
                 z-index 0.2s;
             cursor: pointer;
             z-index: 1;
         }
+
         .player-card:hover {
             transform: scale(1.13) translateY(-22px);
-            box-shadow: 0 26px 70px 12px rgba(20,20,20,0.20), 0 2px 16px #cfcfcf;
+            box-shadow: 0 26px 70px 12px rgba(20, 20, 20, 0.20), 0 2px 16px #cfcfcf;
             border-color: #bcbcbc;
             z-index: 30;
         }
+
         .player-card img {
             display: block;
             width: 88px;
@@ -161,14 +195,16 @@
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 12px auto;
-            box-shadow: 0 2px 8px 0 rgba(80,80,80,.10);
+            box-shadow: 0 2px 8px 0 rgba(80, 80, 80, .10);
             background: #eee;
             border: 1.5px solid #cfcfcf;
             transition: border-color 0.17s;
         }
+
         .player-card:hover img {
             border-color: #bcbcbc;
         }
+
         .player-card strong {
             font-size: 1.1em;
             color: var(--main);
@@ -177,12 +213,14 @@
             margin-bottom: 5px;
             text-shadow: 0 1px 5px #f4f4f4;
         }
+
         .player-card span {
             /* color: white; */
             font-size: 1em;
             display: block;
             margin-bottom: 7px;
         }
+
         .player-tag {
             display: inline-block;
             font-size: 0.88em;
@@ -194,6 +232,7 @@
             font-weight: 600;
             letter-spacing: 0.1px;
         }
+
         .accent-bar {
             width: 32px;
             height: 4px;
@@ -202,6 +241,7 @@
             margin: 0 auto 13px auto;
             box-shadow: 0 1.5px 8px #ededed;
         }
+
         .ribbon {
             position: absolute;
             top: 1px;
@@ -216,31 +256,62 @@
             box-shadow: 0 1px 4px #e0e0e0;
             border-radius: 6px;
         }
+
         .player-card {
-            opacity:0;
+            opacity: 0;
             transform: translateY(40px);
             animation: fadein 1s forwards;
         }
-        .player-card:nth-child(1) { animation-delay: 0.1s;}
-        .player-card:nth-child(2) { animation-delay: 0.25s;}
-        .player-card:nth-child(3) { animation-delay: 0.4s;}
-        .player-card:nth-child(4) { animation-delay: 0.55s;}
-        .player-card:nth-child(n+5) { animation-delay: 0.7s;}
-        @keyframes fadein {
-            0% { opacity:0; transform: translateY(40px);}
-            100% { opacity:1; transform: none;}
+
+        .player-card:nth-child(1) {
+            animation-delay: 0.1s;
         }
+
+        .player-card:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .player-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .player-card:nth-child(4) {
+            animation-delay: 0.55s;
+        }
+
+        .player-card:nth-child(n+5) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         .modal {
             display: none;
             position: fixed;
             z-index: 77;
             padding-top: 90px;
-            left: 0; top: 0; width: 100%; height: 100%;
-            overflow: auto; background: rgba(34,34,34,0.63);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(34, 34, 34, 0.63);
         }
+
         .modal-content {
             background: var(--white);
-            margin: auto; padding: 28px 18px;
+            margin: auto;
+            padding: 28px 18px;
             border-radius: 15px;
             max-width: 340px;
             box-shadow: 0 5px 28px #444;
@@ -248,34 +319,63 @@
             text-align: center;
             border: 1.5px solid #d3d3d3;
         }
+
         .close {
             color: var(--main);
             position: absolute;
-            right: 22px; top: 10px;
+            right: 22px;
+            top: 10px;
             font-size: 2.1em;
             font-weight: 800;
             cursor: pointer;
             transition: color .19s;
         }
-        .close:hover { color: var(--text-accent);}
+
+        .close:hover {
+            color: var(--text-accent);
+        }
+
         .modal-content img {
-            width: 90px; height: 90px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             box-shadow: 0 0 0 6px #e0e0e0;
             border: 1.5px solid #cfcfcf;
         }
+
         @media (max-width: 800px) {
-            .team-container {gap: 20px 7px; padding: 2vw 0 20px 0;}
-            .player-card {width: 94vw; max-width: 320px;}
-            header { font-size: 1.3rem; padding: 15px 0 8px 0;}
+            .team-container {
+                gap: 20px 7px;
+                padding: 2vw 0 20px 0;
+            }
+
+            .player-card {
+                width: 94vw;
+                max-width: 320px;
+            }
+
+            header {
+                font-size: 1.3rem;
+                padding: 15px 0 8px 0;
+            }
         }
+
         @media (max-width: 500px) {
-            header { font-size: 1rem;}
-            h2 { font-size: 1rem;}
-            .modal-content { max-width: 98vw;}
+            header {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                max-width: 98vw;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- BACKGROUND IMAGE HOLDER -->
     <div class="bg-image-holder">
@@ -293,7 +393,9 @@
             <button onclick="searchPlayer()">Search</button>
         </div>
         <div class="team-container" id="teamContainer">
-            <div class="player-card" data-name="Andrew Judah" data-role="Captain All-rounder Batsman" data-img="rohit.jpg" data-desc="One of the finest all-rounders, Andrew leads Baazigars with poise and experience.">
+            <div class="player-card" data-name="Andrew Judah" data-role="Captain All-rounder Batsman"
+                data-img="rohit.jpg"
+                data-desc="One of the finest all-rounders, Andrew leads Baazigars with poise and experience.">
                 <div class="ribbon">Captain</div>
                 <img src="rohit.jpg" alt="Andrew Judah">
                 <strong>Andrew Judah</strong>
@@ -301,21 +403,24 @@
                 <span class="player-tag">All-rounder</span>
                 <span>Batsman</span>
             </div>
-            <div class="player-card" data-name="Dhrub Agarwal" data-role="Vice Captain Batsman" data-img="virat.jpg" data-desc="Vice Captain Dhrub is a run machine and master of chases.">
+            <div class="player-card" data-name="Dhrub Agarwal" data-role="Vice Captain Batsman" data-img="virat.jpg"
+                data-desc="Vice Captain Dhrub is a run machine and master of chases.">
                 <img src="virat.jpg" alt="Dhrub Agarwal">
                 <strong>Dhrub Agarwal</strong>
                 <div class="accent-bar"></div>
                 <span class="player-tag">Vice Captain</span>
                 <span>Batsman</span>
             </div>
-            <div class="player-card" data-name="Manav G" data-role="Fast Bowler" data-img="bumrah.jpg" data-desc="Manav is known for deadly yorkers and pace bowling.">
+            <div class="player-card" data-name="Manav G" data-role="Fast Bowler" data-img="bumrah.jpg"
+                data-desc="Manav is known for deadly yorkers and pace bowling.">
                 <img src="bumrah.jpg" alt="Manav G">
                 <strong>Manav G</strong>
                 <div class="accent-bar"></div>
                 <span class="player-tag">Fast Bowler</span>
                 <span>Bowler</span>
             </div>
-            <div class="player-card" data-name="Rishi Deepak" data-role="All-rounder" data-img="jadeja.jpg" data-desc="Fielding wizard with match-winning all-round skills.">
+            <div class="player-card" data-name="Rishi Deepak" data-role="All-rounder" data-img="jadeja.jpg"
+                data-desc="Fielding wizard with match-winning all-round skills.">
                 <img src="jadeja.jpg" alt="Rishi Deepak">
                 <strong>Rishi Deepak</strong>
                 <div class="accent-bar"></div>
@@ -324,6 +429,30 @@
             </div>
             <!-- Add more player cards here -->
         </div>
+
+        <!-- Managers -->
+        <h2 style="margin-top:32px; font-size: 1.4rem; letter-spacing: 1.1px; text-align: center;">Managers</h2>
+        <div class="manager-container"
+            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 20px; padding: 20px 4vw 32px 4vw; max-width: 900px; margin: 0 auto;">
+            <div class="player-card" data-name="Sunil Chhetri" data-role="Team Manager" data-img="manager1.jpg"
+                data-desc="Oversees team strategy, logistics and player welfare.">
+                <img src="manager1.jpg" alt="Sunil Chhetri">
+                <strong>Sunil Chhetri</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">Manager</span>
+                <span>Team Manager</span>
+            </div>
+            <div class="player-card" data-name="Rupa Singh" data-role="Operation Manager" data-img="manager2.jpg"
+                data-desc="Handles match-day operations and team schedules.">
+                <img src="manager2.jpg" alt="Rupa Singh">
+                <strong>Rupa Singh</strong>
+                <div class="accent-bar"></div>
+                <span class="player-tag">Operations</span>
+                <span>Operation Manager</span>
+            </div>
+            <!-- Add more manager cards as needed -->
+        </div>
+
 
         <!-- Modal for Player Details -->
         <div id="playerModal" class="modal">
@@ -339,7 +468,7 @@
     <script>
         // Modal popup
         document.querySelectorAll('.player-card').forEach(card => {
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 document.getElementById('modalName').textContent = card.getAttribute('data-name');
                 document.getElementById('modalRole').textContent = card.getAttribute('data-role');
                 document.getElementById('modalDesc').textContent = card.getAttribute('data-desc');
@@ -351,15 +480,15 @@
         function closeModal() {
             document.getElementById('playerModal').style.display = "none";
         }
-        window.onclick = function(event) {
-            if(event.target == document.getElementById('playerModal')) closeModal();
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('playerModal')) closeModal();
         }
         function searchPlayer() {
             const input = document.getElementById('playerSearch').value.toLowerCase();
             document.querySelectorAll('.player-card').forEach(card => {
                 let name = card.getAttribute('data-name').toLowerCase();
                 let role = card.getAttribute('data-role').toLowerCase();
-                if (name.includes(input) || role.includes(input) || input==="") {
+                if (name.includes(input) || role.includes(input) || input === "") {
                     card.style.display = '';
                 } else {
                     card.style.display = 'none';
@@ -367,9 +496,10 @@
             });
         }
         document.getElementById('playerSearch').addEventListener('keyup', searchPlayer);
-        document.addEventListener('keydown', function(e){
+        document.addEventListener('keydown', function (e) {
             if (e.key === "Escape") closeModal();
         });
     </script>
 </body>
+
 </html>
