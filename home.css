@@ -1,5 +1,9 @@
 @import url("setup.css");
 
+:root{
+    --carousel-width: 400px;
+}
+
 ::-webkit-scrollbar{
     display: none;
 }
@@ -11,6 +15,7 @@ body{
     color: white;
     font-family: "vend-sans";
     font-size: 1.1rem;
+    overflow-x: hidden;
 }
 
 
@@ -32,6 +37,7 @@ div.navbar{
     border-radius: 50px;
     padding: 0px 10px;
     box-shadow: 0px 0px 8px 2px #0000008e;
+    color: black;
 }
 
 .navbar > div.logo{
@@ -69,19 +75,15 @@ a{
 
 /* =============================================== */
 
-.section-1{
-    display: grid;
-    grid-template-areas: "main";
-}
-
-.section-1 > div.background{
-    grid-area: main;
-    height: 100vh;
+div.background{
+    /* width: 100vw; */
+    /* height: 100vh; */
     width: 100vw;
     opacity: 0.85;
-    z-index: -999;
-    overflow-x: hidden;
-    display: fixed;
+    z-index: -1;
+    position: fixed;
+    top: 0px;
+    object-fit: fill;
 }
 
 video{
@@ -95,18 +97,20 @@ video{
 
 
 .section-1 > div.content{
-    grid-area: main;
-    display: grid;
-    grid-template-areas: "sec1 sec2";
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: end;
+    gap: 10%;
 }
 
 .section-1 > div.content > div.left{
-    align-self: end;
-    grid-area: sec1;
-    padding: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    justify-content: end;
+    max-width: 50%;
     gap: 20px;
 }
 
@@ -121,10 +125,124 @@ p{
 }
 
 .section-1 > div.content > div.right{
-    justify-self: end;
-    width: 70%;
-    grid-area: sec2;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 5vh;
+    align-items: center;
 }
+
+div.carousel{
+    display: flex;
+    gap: 2px;
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    border: 2px #ffffff70 solid;
+    box-shadow: 0px 0px 5px 1px #ffffff70;
+    height: 200px;
+    width: var(--carousel-width);
+    border-radius: 15px;
+}
+
+div.item{
+    scroll-snap-align: start;
+
+}
+
+div.item img{
+    width: var(--carousel-width);
+    transform: translateX(0px);
+    animation: carousel 9s  ease-in-out infinite;
+}
+
+@keyframes carousel {
+    0%   { transform: translateX(0); }
+    33%  { transform: translateX(0); }
+
+    38%  { transform: translateX(calc(-1 * var(--carousel-width))); }
+    66%  { transform: translateX(calc(-1 * var(--carousel-width))); }
+
+    71%  { transform: translateX(calc(-2 * var(--carousel-width))); }
+    99%  { transform: translateX(calc(-2 * var(--carousel-width))); }
+
+    100% { transform: translateX(0); }
+}
+
+div.handles{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    height: 75px;
+}
+
+div.handles img{
+    width: fit-content;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+div.handles img:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 950px) {
+    :root{
+        --carousel-width: 300px;
+    }
+    div.navbar{
+        top: 10px;
+        height: 50px;
+    }
+    .navbar > div.links{
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    .section-1 > div.content{
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-top: 200px;
+        overflow: scroll;
+        width: 100vw;
+        padding-top: 120px;
+    }
+
+    div.left{
+        text-align: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-height: 975px) {
+    :root{
+        --carousel-width: 300px;
+    }
+    div.navbar{
+        top: 10px;
+        height: 50px;
+    }
+    .navbar > div.links{
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    .section-1 > div.content{
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-top: 200px;
+        overflow: scroll;
+        width: 100vw;
+        padding-top: 120px;
+    }
+
+    div.left{
+        text-align: center;
+        align-items: center;
+    }
+}
+
