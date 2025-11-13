@@ -12,6 +12,62 @@ h1 {
     color: #222;
 }
 
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+div.navbar{
+    margin-top: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    height: 80px;
+    border-radius: 50px;
+    padding: 0px 10px;
+    box-shadow: 0px 0px 8px 2px #0000008e;
+    color: black;
+}
+
+.navbar > div.logo{
+    height: 100%;
+}
+
+img{
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar > div.links {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}
+
+.navbar > div.links > a {
+    padding: 5px 4%;
+    border-radius: 50px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.navbar > div.links > a:hover{
+    background-color: #bdbdbd50;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+main{
+    padding-top: 150px;
+}
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -214,4 +270,18 @@ h1 {
         width: 42px;
         height: 42px;
     }
+
+    div.navbar{
+        top: 10px;
+        height: 50px;
+    }
+
+    .navbar > div.links{
+        font-size: 1rem;
+    }
+
+    main{
+        padding-top: 100px;
+    }
 }
+

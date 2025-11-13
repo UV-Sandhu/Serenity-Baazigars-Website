@@ -1,15 +1,6 @@
-heading: Bangladesh speedster fined for breaching ICC Code of Conduct
-content: Bangladesh's pacer was fined after breaking ICC's code. Read more...
-full: The full investigation revealed that the bowler breached Level 1 of the ICC Code of Conduct. Further disciplinary action is being considered after his response in the match.
-topic: News
+heading: The most expensive player in SPL History!!!
+content: Serenity Baazigars purchased the most expensive player in SPL history for... 
+full: Serenity Baazigars purchased the most expensive player in SPL history for 140,000 credits!!! Abhinav, the most expensive player.
 image: image1.jpg
-time: 2h
+time: Yesterday
 ---
-heading: Bangladesh speedster fined for breaching ICC Code of Conduct
-content: Bangladesh's pacer was fined after breaking ICC's code. Read more...
-full: Bangladesh pacer Nahid Rana has been fined 25 per cent of his match fee for breaching Level 1 of the ICC Code of Conduct on Day 1 of the first Test against Ireland in Sylhet. Nahid was found guilty of breaching Article 2.9 of the ICC Code of Conduct for Players and Player Support Personnel, which relates to “throwing a ball (or any other item of cricket equipment) at or near a player in an inappropriate and/or dangerous manner during an International Match.” In addition to the fine, one demerit point has been added to Nahid’s disciplinary record. It is Nahid’s first offence in a 24-month period.Bangladesh pacer Nahid Rana has been fined 25 per cent of his match fee for breaching Level 1 of the ICC Code of Conduct on Day 1 of the first Test against Ireland in Sylhet. Nahid was found guilty of breaching Article 2.9 of the ICC Code of Conduct for Players and Player Support Personnel, which relates to “throwing a ball (or any other item of cricket equipment) at or near a player in an inappropriate and/or dangerous manner during an International Match.” In addition to the fine, one demerit point has been added to Nahid’s disciplinary record. It is Nahid’s first offence in a 24-month period.
-
-
-image: image2.jpeg
-time: 2h
-
