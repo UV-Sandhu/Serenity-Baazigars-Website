@@ -11,34 +11,7 @@ h1 {
     margin: 32px;
     color: #222;
 }
-.news-bg-holder {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-}
-.news-bg-holder img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
-    filter: blur(6px) brightness(0.8) grayscale(0.2) saturate(1.05);
-    opacity: 0.78;
-    transition: filter 1.2s;
-}
-.news-bg-overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(132deg, rgba(22,16,41,0.52) 0%, rgba(50,61,80,0.20) 100%);
-    opacity: 0.76;
-    z-index: 1;
-    pointer-events: none;
-}
+
 
 body > *:not(.news-bg-holder) {
     position: relative;
