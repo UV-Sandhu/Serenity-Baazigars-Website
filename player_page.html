@@ -84,24 +84,7 @@
 
         /* Main content is above the background */
         .page-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        header {
-            background: linear-gradient(90deg, var(--main) 80%, var(--accent) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 28px 0 18px 0;
-            letter-spacing: 2px;
-            font-size: 2.1rem;
-            font-weight: 700;
-            box-shadow: var(--shadow);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
+           padding-top: 150px;
         }
 
         h2 {
@@ -343,6 +326,64 @@
             border: 1.5px solid #cfcfcf;
         }
 
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+
+        div.navbar{
+            margin-top: 20px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 20px;
+            width: 90%;
+            height: 80px;
+            border-radius: 50px;
+            padding: 0px 10px;
+            box-shadow: 0px 0px 8px 2px #0000008e;
+            color: black;
+            z-index: 99;
+        }
+
+        .navbar > div.logo{
+            height: 100%;
+        }
+
+        img{
+            aspect-ratio: 1/1;
+            height: 100%;
+            width: 100%;
+        }
+
+        .navbar > div.links {
+            display: flex;
+            width: 70%;
+            justify-content: space-evenly;
+            font-size: 1.3rem;
+        }
+
+        .navbar > div.links > a {
+            padding: 5px 4%;
+            border-radius: 50px;
+            background-color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar > div.links > a:hover{
+            background-color: #bdbdbd50;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        main{
+            padding-top: 150px;
+        }
+
         @media (max-width: 800px) {
             .team-container {
                 gap: 20px 7px;
@@ -358,6 +399,20 @@
                 font-size: 1.3rem;
                 padding: 15px 0 8px 0;
             }
+
+             div.navbar{
+                top: 10px;
+                height: 50px;
+            }
+
+            .navbar > div.links{
+                font-size: 1rem;
+            }
+
+            .page-content{
+                padding-top: 100px;
+            }
+
         }
 
         @media (max-width: 500px) {
@@ -378,15 +433,25 @@
 
 <body>
     <!-- BACKGROUND IMAGE HOLDER -->
-    <div class="bg-image-holder">
+    <!-- <div class="bg-image-holder">
         <img src="back.jpg" alt="Background">
-    </div>
+    </div> -->
+
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/photos/logo.png" alt="">
+            </div>
+            <div class="links">
+                <a href="homePage.html" target="_self">Home</a>
+                <a href="news.html" target="_self">News</a>
+                <a href="player_page.html" target="_self">Squad</a>
+            </div>
+        </div>
+    </nav>
     <div class="bg-overlay"></div>
 
     <div class="page-content">
-        <header>
-            Serenity Baazigars
-        </header>
         <h2>Meet Our Stars</h2>
         <div class="search-box">
             <input type="text" id="playerSearch" placeholder="Search team member...">
