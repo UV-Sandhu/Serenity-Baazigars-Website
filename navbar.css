@@ -1,0 +1,114 @@
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+div.navbar{
+    margin-top: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    height: 80px;
+    border-radius: 50px;
+    padding: 0px 10px;
+    box-shadow: 0px 0px 8px 2px #0000008e;
+    color: black;
+}
+
+.navbar > div.logo{
+    height: 100%;
+}
+
+img{
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: 100%;
+}
+
+div.pages{
+    display: flex;
+    align-items: center;
+}
+.pages > div.links {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 1.3rem;
+}
+
+.menu{
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+
+.menu:hover{
+    transform: scale(1.1);
+}
+
+.navbar > div.links > a {
+    border-radius: 50px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+a.links{
+    padding: 5px 4%;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+a.links:hover{
+    background-color: #bdbdbd50;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidePanel{
+    background-color: rgba(255, 255, 255, 0.911);
+    width: 40vw;
+    position: fixed;
+    top: 90px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    border-radius: 30px;
+    align-items: center;
+    padding-top: 20px;
+    color:black;
+    gap: 5%;
+    font-size: 1.2rem;
+    transform: translate(100vw);
+    transition: transform 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 950px) {
+    div.navbar{
+        top: 10px;
+        height: 50px;
+    }
+    .navbar > div.links{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-height: 975px) {
+    div.navbar{
+        top: 10px;
+        height: 50px;
+    }
+    .navbar > div.links{
+        font-size: 1rem;
+    }
+}

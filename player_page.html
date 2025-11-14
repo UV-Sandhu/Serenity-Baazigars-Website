@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Team Members – Serenity Baazigars</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
     <style>
         :root {
             --main: #222;
@@ -326,56 +327,6 @@
             border: 1.5px solid #cfcfcf;
         }
 
-        nav{
-            display: flex;
-            justify-content: center;
-        }
-
-        div.navbar{
-            margin-top: 20px;
-            background-color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 20px;
-            width: 90%;
-            height: 80px;
-            border-radius: 50px;
-            padding: 0px 10px;
-            box-shadow: 0px 0px 8px 2px #0000008e;
-            color: black;
-            z-index: 99;
-        }
-
-        .navbar > div.logo{
-            height: 100%;
-        }
-
-        img{
-            aspect-ratio: 1/1;
-            height: 100%;
-            width: 100%;
-        }
-
-        .navbar > div.links {
-            display: flex;
-            width: 70%;
-            justify-content: space-evenly;
-            font-size: 1.3rem;
-        }
-
-        .navbar > div.links > a {
-            padding: 5px 4%;
-            border-radius: 50px;
-            background-color: white;
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar > div.links > a:hover{
-            background-color: #bdbdbd50;
-        }
-
         a{
             text-decoration: none;
             color: black;
@@ -400,15 +351,6 @@
                 padding: 15px 0 8px 0;
             }
 
-             div.navbar{
-                top: 10px;
-                height: 50px;
-            }
-
-            .navbar > div.links{
-                font-size: 1rem;
-            }
-
             .page-content{
                 padding-top: 100px;
             }
@@ -429,6 +371,7 @@
             }
         }
     </style>
+    <script src="sidePanel.js"></script>
 </head>
 
 <body>
@@ -442,10 +385,46 @@
             <div class="logo">
                 <img src="assets/photos/logo.png" alt="">
             </div>
-            <div class="links">
-                <a href="homePage.html" target="_self">Home</a>
-                <a href="news.html" target="_self">News</a>
-                <a href="player_page.html" target="_self">Squad</a>
+            <div class="pages">
+                <script>
+                    function linksInNav() {
+                        let element = document.querySelector("div.pages");
+                        element.style.width = "70%"
+                        element.innerHTML = `
+                        <div class="links">
+                            <a href="homePage.html" target="_self">Home</a>
+                            <a href="highlights.html" target="_self">Highlights</a>
+                            <a href="news.html" target="_self">News</a>
+                            <a href="player_page.html" target="_self">Squad</a>
+                            </div>
+                            `;
+                        }
+                        
+                    function linksInSidebar() {
+                        let element = document.querySelector("div.pages");
+                        element.style.width = "7%";
+                        element.style.margin = "0px 5px 0px 0px";
+                        element.innerHTML = '<img class="menu" src="assets/photos/menu_icon.svg" onclick="menuClicked()"></img>'
+                        
+                        document.querySelector("nav").innerHTML += '<div class="sidePanel"></div>';
+                        let sidePanel = document.querySelector(".sidePanel");
+                        sidePanel.innerHTML = `
+                        <a class="links" href="homePage.html" target="_self">Home</a>
+                        <a class="links" href="highlights.html" target="_self">Highlights</a>
+                        <a class="links" href="news.html" target="_self">News</a>
+                        <a class="links" href="player_page.html" target="_self">Squad</a>
+                        `;
+                    }
+
+
+                    width = window.innerWidth;
+                    if (width > 770){
+                        linksInNav();
+                    }
+                    else{
+                        linksInSidebar();
+                    }
+                </script>
             </div>
         </div>
     </nav>
