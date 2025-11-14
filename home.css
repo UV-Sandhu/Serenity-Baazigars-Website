@@ -114,9 +114,14 @@ div.item img{
     100% { transform: translateX(0); }
 }
 
+.support-us{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 div.handles{
     display: flex;
-    width: 100%;
     justify-content: center;
     height: 75px;
 }

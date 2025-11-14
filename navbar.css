@@ -17,6 +17,7 @@ div.navbar{
     padding: 0px 10px;
     box-shadow: 0px 0px 8px 2px #0000008e;
     color: black;
+    z-index: 9;
 }
 
 .navbar > div.logo{
@@ -101,6 +102,10 @@ a{
     .navbar > div.links{
         font-size: 1rem;
     }
+
+    main{
+        padding-top: 100px;
+    }
 }
 
 @media screen and (max-height: 975px) {
@@ -110,5 +115,8 @@ a{
     }
     .navbar > div.links{
         font-size: 1rem;
+    }
+    main{
+        padding-top: 100px;
     }
 }
