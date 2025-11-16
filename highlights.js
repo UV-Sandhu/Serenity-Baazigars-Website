@@ -5,6 +5,16 @@ const highlightVideos = [
     { file: 'highlights_videos/video3.mp4'},
     { file: 'highlights_videos/video4.mp4'},
     { file: 'highlights_videos/video5.mp4'},
+    { file: 'highlights_videos/video6.mp4'},
+    { file: 'highlights_videos/video7.mp4'},
+    { file: 'highlights_videos/video8.mp4'},
+    { file: 'highlights_videos/video9.mp4'},
+    { file: 'highlights_videos/video10.mp4'},
+    { file: 'highlights_videos/video11.mp4'},
+    { file: 'highlights_videos/video12.mp4'},
+    { file: 'highlights_videos/video13.mp4'},
+    { file: 'highlights_videos/video14.mp4'},
+    { file: 'highlights_videos/video15.mp4'},
     // Add every file you want to show
 ];
 
