@@ -1,6 +1,6 @@
 heading: The most expensive player in SPL History!!!
 content: Serenity Baazigars purchased the most expensive player in SPL history for... 
 full: Serenity Baazigars purchased the most expensive player in SPL history for 140,000 credits!!! Abhinav, the most expensive player.
-image: image1.jpg
+image: image3.png
 time: Yesterday
 ---
